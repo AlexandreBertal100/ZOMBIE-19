@@ -1,6 +1,5 @@
-from app.model import People
 from app.service import PeopleService
-from app.model.virus import Zombie19, Zombie32, ZombieA, ZombieB, ZombieC, ZombieUltime
+from app.model.virus import Zombie19, Zombie32, ZombieB, ZombieC, ZombieUltime
 from app.model.vaccins import VaccinA1,VaccinB1, VaccinUltime
 if __name__ == '__main__':
 
