@@ -1,7 +1,8 @@
 from app.service import PeopleService
 from app.model.virus import Zombie19, Zombie32, ZombieB, ZombieC, ZombieUltime
 from app.model.vaccins import VaccinA1,VaccinB1, VaccinUltime
-from app.service.vaccination_service import VaccinationService
+from app.service import VaccinationService
+
 if __name__ == '__main__':
 
     peoples = [
@@ -26,6 +27,7 @@ if __name__ == '__main__':
     vacUltime= VaccinUltime()
 
     vaccin_to_use = [vacA]
+    peoples_infected = [{"name":"alex","virus":z32}]
 
     ps= PeopleService()
     ps.create_people(peoples)
@@ -34,13 +36,13 @@ if __name__ == '__main__':
     ps.display_tree('louise')
     print('============================\n')
 
-    ps.create_infected([{"name":"alex","virus":zu}])
+    ps.create_infected(peoples_infected)
 
     print('\n======= After Infection =========')
     ps.display_tree('louise')
     print('===================================\n')
 
-    VaccinationService().vaccination_in_process( ps.get_peoples(), vaccin_to_use )
+    VaccinationService().vaccination_in_process( ps.get_all_peoples(), vaccin_to_use )
 
     print('\n======= After Vaccination =========')
     ps.display_tree('louise')
