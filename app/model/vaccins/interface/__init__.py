@@ -1,0 +1,1 @@
+from .ivaccin import IVaccin

@@ -1,8 +1,9 @@
 from app.model.people import People
 from app.model.people_state import People_State
 from app.model import ZombieUltime, ZombieA, ZombieB, ZombieC, Zombie19, Zombie32
+from app.model.vaccins.interface import IVaccin
 
-class VaccinUltime():
+class VaccinUltime(IVaccin):
 
     NAME = "Vaccin-Ultime"
     IMUNNISE = [ZombieUltime, ZombieA, ZombieB, ZombieC, Zombie19, Zombie32]
